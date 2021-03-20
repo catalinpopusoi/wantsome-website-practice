@@ -4,27 +4,35 @@
     <title>News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Category</li>
-          <li>Latest news</li>
-          <li>Pages</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-      <div class="social-section">
-        <p>Social icons and search</p>
+      <div class="container">
+        <nav>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Category</li>
+            <li>Latest news</li>
+            <li>Pages</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div class="social-and-search">
+          <div class="social-icons">
+            <span>f</span>
+            <span>I</span>
+            <span>t</span>
+            <span>y</span>
+          </div>
+          <span class="search">Search</span>
+        </div>
       </div>
     </header>
 
-    <main>
+    <main class="container">
       <section class="top-articles">
         <article>
           <span class="tag business">Business</span>
@@ -42,7 +50,109 @@
           <small>by Author - Jun 19 2020</small>
         </article>
       </section>
-      <section class="recent-articles"></section>
+      <section class="recent-articles">
+        <div class="whats-new">
+          <header>
+            <h2>Whats New</h2>
+            <ul>
+              <li>Lifestyle</li>
+              <li>Travel</li>
+              <li>Fashion</li>
+              <li>Sports</li>
+              <li>Technology</li>
+            </ul>
+          </header>
+
+          <section class="articles">
+            <div class="main-article">
+              <article>
+                <img src="https://picsum.photos/seed/article/320/200" alt="" />
+                <h3>Secretart for Economic Air that looks like</h3>
+                <small>by Author - 20 March 2021</small>
+                <p>Struggling to sell one multi-million dollar home currently on the market won't stop</p>
+              </article>
+            </div>
+            <div class="secondary-articles">
+              <article>
+                <img src="https://picsum.photos/seed/article2/100" alt="" />
+                <div class="secondary-article-content">
+                  <span class="tag fashion">Fashion</span>
+                  <h4>Portrait of group of friends</h4>
+                  <small>by Author - 20 March 2021</small>
+                </div>
+              </article>
+              <article>
+                <img src="https://picsum.photos/seed/article3/100" alt="" />
+                <div class="secondary-article-content">
+                  <span class="tag fashion">Fashion</span>
+                  <h4>Portrait of group of friends</h4>
+                  <small>by Author - 20 March 2021</small>
+                </div>
+              </article>
+              <article>
+                <img src="https://picsum.photos/seed/article4/100" alt="" />
+                <div class="secondary-article-content">
+                  <span class="tag tech">Tech</span>
+                  <h4>Portrait of group of friends</h4>
+                  <small>by Author - 20 March 2021</small>
+                </div>
+              </article>
+              <article>
+                <img src="https://picsum.photos/seed/article5/100" alt="" />
+                <div class="secondary-article-content">
+                  <span class="tag business">Business</span>
+                  <h4>Portrait of group of friends</h4>
+                  <small>by Author - 20 March 2021</small>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+        <div class="social-followers">
+          <div class="followers">
+            <span class="facebook"></span>
+            <div class="fans">
+              <p>8,045</p>
+              <small>fans</small>
+            </div>
+          </div>
+          <div class="followers">
+            <span class="twitter"></span>
+            <div class="fans">
+              <p>8,045</p>
+              <small>fans</small>
+            </div>
+          </div>
+          <div class="followers">
+            <span class="instagram"></span>
+            <div class="fans">
+              <p>8,045</p>
+              <small>fans</small>
+            </div>
+          </div>
+          <div class="followers">
+            <span class="youtube"></span>
+            <div class="fans">
+              <p>8,045</p>
+              <small>fans</small>
+            </div>
+          </div>
+        </div>
+        <div class="most-recent">
+          <h4>Most recent</h4>
+          <article>
+            <span class="tag business">Business</span>
+            <h2>Anna Lora stuns in white at her Australian Premiere</h2>
+            <small>by Author - Jun 19 2020</small>
+          </article>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="container">
+        <p>Copyright 2021</p>
+      </div>
+    </footer>
   </body>
 </html>
