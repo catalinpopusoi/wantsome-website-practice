@@ -1,8 +1,6 @@
 @import 'colors';
 @import 'spacings';
 
-// px, %, vw, vh, rem, em
-
 body {
   font-family: 'Lato', sans-serif;
   background-color: $body-background-color;
@@ -103,6 +101,58 @@ small {
 
 main {
   margin-top: 67px;
+
+  .top-articles {
+    article {
+      height: 400px;
+      margin-bottom: $spacing-large;
+  
+      @media screen and (min-width: 768px) {
+        border-radius: 8px 8px 0 0; // left-top, right-top, right-bottom, left-bottom
+        margin-bottom: 0;
+        height: auto;
+      }
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: $white;
+      padding: $spacing-base $spacing-xLarge;
+      position: relative;
+  
+      span, h2, h3, small {
+        position: relative;
+        z-index: 2;
+      }
+  
+      &::after {
+        content: '';
+        background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 80%;
+        width: 100%;
+      }
+  
+      &:first-child {
+        background-image: url('https://picsum.photos/seed/picsum/700');
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+      }
+  
+      &:nth-child(2) {
+        background-image: url('https://picsum.photos/seed/picsum2/700');
+      }
+  
+      &:last-child {
+        background-image: url('https://picsum.photos/seed/picsum1/700');
+      }
+    }
+  }
   
   @media screen and (min-width: 768px) {
     margin-top: 0;
@@ -113,56 +163,6 @@ main {
       grid-template-columns: 2fr 1fr;
       grid-gap: $spacing-large;
       height: 500px;
-
-      article {
-        height: 400px;
-        margin-bottom: $spacing-large;
-    
-        @media screen and (min-width: 768px) {
-          border-radius: 8px 8px 0 0; // left-top, right-top, right-bottom, left-bottom
-          margin-bottom: 0;
-          height: auto;
-        }
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: $white;
-        padding: $spacing-base $spacing-xLarge;
-        position: relative;
-    
-        span, h2, h3, small {
-          position: relative;
-          z-index: 2;
-        }
-    
-        &::after {
-          content: '';
-          background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 80%;
-          width: 100%;
-        }
-    
-        &:first-child {
-          background-image: url('https://picsum.photos/seed/picsum/700');
-          grid-column: 1 / span 1;
-          grid-row: 1 / span 2;
-        }
-    
-        &:nth-child(2) {
-          background-image: url('https://picsum.photos/seed/picsum2/700');
-        }
-    
-        &:last-child {
-          background-image: url('https://picsum.photos/seed/picsum1/700');
-        }
-      }
     }
   }
 }
@@ -202,14 +202,22 @@ footer {
 
 .recent-articles {
   margin-top: $spacing-large;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 2fr;
-  grid-gap: $spacing-large;
+  
+  @media screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: $spacing-large;
+  }
 
   > div {
     background-color: $white;
     border-radius: 8px;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 992px) {
+      margin-bottom: 0;
+    }
   }
 
   .whats-new {
@@ -217,8 +225,10 @@ footer {
     grid-row: 1 / 3;
 
     header {
-      display: flex;
-      align-items: center;
+      @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+      }
 
       h2 {
         font-weight: 900;
@@ -229,7 +239,12 @@ footer {
       ul {
         display: flex;
         align-items: center;
-        margin-left: 40px;
+        margin-top: 24px;
+
+        @media screen and (min-width: 768px) {
+          margin-top: 0;
+          margin-left: 40px;
+        }
 
         li {
           font-size: 14px;
@@ -246,8 +261,11 @@ footer {
     }
 
     .articles {
-      display: flex;
       margin-top: $spacing-xLarge;
+      
+      @media screen and (min-width: 768px) {
+        display: flex;
+      }
 
       > div {
         flex: 1;
