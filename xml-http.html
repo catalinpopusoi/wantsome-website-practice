@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XML HTTP requests</title>
+  </head>
+  <body>
+    <button data-id="1">Get post with id 1</button>
+    <button data-id="2">Get post with id 2</button>
+    <button data-id="3">Get post with id 3</button>
+
+    <h1>Placeholder title</h1>
+    <script type="text/javascript">
+      const h1 = document.getElementsByTagName('h1')[0];
+      let activePost = null;
+      
+      function getDataWithAjax(url) {
+        const xhttp = new XMLHttpRequest();
+
+        xhttp.open('GET', url);
+
+        xhttp.send();
+
+        xhttp.addEventListener('load', function(e) {
+          const post = JSON.parse(this.response);
+          console.log('asignarea activePost', new Date().getMilliseconds());
+          const { id, title } = post;
+          h1.textContent = `${id} - ${title}`;
+          
+        });
+      }
+
+      const buttons = document.getElementsByTagName('button');
+
+      for (let button of buttons) {
+        button.addEventListener('click', function(e) {
+          const id = e.target.dataset.id;
+          getDataWithAjax(`http://jsonplaceholder.typicode.com/posts/${id}`);
+        });
+      }
+
+      fetch('http://jsonplaceholder.typicode.com/posts/2')
+        .then(response => {
+          return response.json();
+        })
+        .then(post => {
+          const { id, title } = post;
+          h1.textContent = `${id} - ${title}`;
+        })
+
+    </script>
+  </body>
+</html>

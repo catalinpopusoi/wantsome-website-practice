@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quote generator</title>
+  </head>
+  <body>
+    <button id="generate-quote">Give me a quote</button>
+    <ul id="quote-container"></ul>
+    <script type="text/javascript">
+      const generateQuoteBtn = document.getElementById('generate-quote');
+      const quoteContainer = document.getElementById('quote-container');
+
+      generateQuoteBtn.addEventListener('click', function() {
+        fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
+          .then(response => response.json())
+          .then(quote => {
+            const li = document.createElement('li');
+            li.textContent = quote;
+            quoteContainer.appendChild(li);
+          });
+      });
+    </script>
+  </body>
+</html>
